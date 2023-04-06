@@ -76,3 +76,4 @@ for i in range(n):
             k-=1
 for row in a:
     print(' '.join([str(elem) for elem in row]))
+    

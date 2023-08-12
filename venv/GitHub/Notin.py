@@ -2,14 +2,14 @@ import json
 import requests
 from datetime import datetime, timedelta
 
-api_key = "1325a1187397ac9acc691f6f6ed03501"
+api_key = "11"
 campaign_id = []
-#token = "secret_y1ZaHWAI3mt6HKCYPca77eJg9MWmkJQBbvONb7ZFiSi"
-token = 'secret_fNY94BddqsYeT3wHPfxFciP3fDNWL05bkXt5zQQHDLx'
-#DATABASE_ID = "38d85cfe199f44a3bff514ef94f5a11b"
-DATABASE_ID = 'ae6fc36661594af88e7690a61f93eee7'
-#Page_id = ['4f803ab7-dc6e-4d27-be37-66ff0ef538f1', '0473334a-f6af-49da-b0dc-169accf9f05f']
-#Page_id = ['b17583e3-6f08-4bc2-9973-2691e94ff047', '0a3bd4df-664e-42ff-8a41-7fa2755ba235', '05e020d2-c8b1-4c53-9c52-932c967564b7']
+#token = "1"
+token = '2'
+#DATABASE_ID = "123"
+DATABASE_ID = '1234'
+#Page_id = ['1111', '2222']
+#Page_id = ['222', '333', '444']
 page_id = []
 a = 0
 from_date = []
@@ -225,8 +225,8 @@ def get_campaign_stats(campaign_id):
     def updatePage(page_id, headers):
 
         # Id кампаний в таблице
-        #Page_id = ['4f803ab7-dc6e-4d27-be37-66ff0ef538f1', '0473334a-f6af-49da-b0dc-169accf9f05f']
-        #Page_id = ['b17583e3-6f08-4bc2-9973-2691e94ff047', '0a3bd4df-664e-42ff-8a41-7fa2755ba235', '05e020d2-c8b1-4c53-9c52-932c967564b7']
+        #Page_id = ['1111', '2222']
+        #Page_id = ['222', '333', '444']
         updateUrl = f"https://api.notion.com/v1/pages/{page_id[a]}"
 
         updateData = {

@@ -6,7 +6,7 @@ L = open('C:/Users/kravc/PycharmProjects/FirstProject/venv/GitHub/Links.txt', 'r
 Links = L.read().split('\n')
 L.close()
 # Создаем бота
-bot = telebot.TeleBot('5884115217:AAFgbZrK6NmxONS8fu4DLYH81VzfA32nXCA')
+bot = telebot.TeleBot('secret')
 # Команда start
 @bot.message_handler(commands=["start"])
 def start(m, res=False):

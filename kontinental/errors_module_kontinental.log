@@ -1,0 +1,16 @@
+ERROR 2024-01-21 19:17:29,439 В get_memory_info: недостаточно строк данных для обработки из команды ps в терминале
+ERROR 2024-01-21 19:20:07,363 in get_city_prices: Message: Unable to obtain chromedriver using Selenium Manager; Message: Unsuccessful command executed: C:\Users\kravc\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json.
+The chromedriver version cannot be discovered
+; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+ERROR 2024-01-21 19:20:09,575 in send_error_to_cmc: HTTPConnectionPool(host='185.178.47.106', port=4200): Max retries exceeded with url: /receive_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025D7FC610D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+ERROR 2024-01-21 19:20:35,805 in get_city_prices: Message: Unable to obtain chromedriver using Selenium Manager; Message: Unsuccessful command executed: C:\Users\kravc\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json.
+The chromedriver version cannot be discovered
+; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+ERROR 2024-01-21 19:20:37,959 in send_error_to_cmc: HTTPConnectionPool(host='185.178.47.106', port=4200): Max retries exceeded with url: /receive_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025D044FC950>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+ERROR 2024-01-21 19:21:07,886 in get_city_prices: Message: Unable to obtain chromedriver using Selenium Manager; Message: Unsuccessful command executed: C:\Users\kravc\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json.
+The chromedriver version cannot be discovered
+; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+ERROR 2024-01-21 19:21:10,075 in send_error_to_cmc: HTTPConnectionPool(host='185.178.47.106', port=4200): Max retries exceeded with url: /receive_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025D024090D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))

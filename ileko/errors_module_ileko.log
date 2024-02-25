@@ -1,0 +1,2 @@
+ERROR 2024-01-21 12:44:30,423 В get_memory_info: недостаточно строк данных для обработки из команды ps в терминале
+ERROR 2024-01-21 13:12:41,283 in send_end_parsing_status_cmc(): [Errno 2] No such file or directory: 'start_time.txt'

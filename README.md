@@ -1,9 +1,9 @@
 <h1 align="center">Hi there, I'm <a href="https://t.me/kravcroman" target="_blank">Roman</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Python developer from Russia</h3>
-<h5 align="center">В данном репозитории представленна чать моих работ!</h3>
-<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Freelancing" target="_blank">Freelancing</a> - часть проектов, которые были выполнены на фрилансе и тестовые для трудоустройства</h3>
-<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Kuban_result" target="_blank">Kuban_result</a> - пару проектов с первой работы</h3>
-<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/TEST" target="_blank">TEST</a> - одно из тестовых заданий</h3>
-<h5 align="center">В папках <a href="https://github.com/KravcRoman/Projects/tree/main/TG_bots" target="_blank">TG_bots</a> и <a href="https://github.com/KravcRoman/Projects/tree/main/tg_bot" target="_blank">tg_bot</a> - Телеграм боты, которые писал на фрилансе</h3>
-<h5 align="center">Все остальные папки представляют собой парсеры сайтов (название папки - название сайта, который парсился) с использование ЦУП</h3>
+<h5 align="center">В данном репозитории представленна чать моих работ!</h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Freelancing" target="_blank">Freelancing</a> - часть проектов, которые были выполнены на фрилансе и тестовые для трудоустройства. Практически к каждому проекту есть ТЗ в файле с окончанием <b>Task.txt</b></h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Kuban_result" target="_blank">Kuban_result</a> - пару проектов с первой работы</h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/TEST" target="_blank">TEST</a> - одно из тестовых заданий</h5>
+<h5 align="center">В папках <a href="https://github.com/KravcRoman/Projects/tree/main/TG_bots" target="_blank">TG_bots</a> и <a href="https://github.com/KravcRoman/Projects/tree/main/tg_bot" target="_blank">tg_bot</a> - Телеграм боты, которые писал на фрилансе</h5>
+<h5 align="center">Все остальные папки представляют собой парсеры сайтов (название папки - название сайта, который парсился) с использованием ЦУП</h5>

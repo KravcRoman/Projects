@@ -2,7 +2,7 @@
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Python developer from Russia</h3>
 
-<h5 align="center">В данном репозитории представлена часть моих работ!</h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub" target="_blank"> GitHub</a> представлена часть моих работ!</h5>
 
 <h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Freelancing" target="_blank">Freelancing</a> - часть проектов, которые были выполнены на фрилансе и тестовые для трудоустройства. Практически к каждому проекту есть ТЗ в файле с окончанием -  <b>Task.txt </b></h5>
 

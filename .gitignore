@@ -1,7 +1,7 @@
-/GitHub/Parsers1/
 /Parsers/database/
 /Parsers/metinvest/
 /summary (конспекты)/
+/GitHub/ыфва.py
 /.idea/
 # Django #
 *.log
@@ -141,6 +141,3 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
-/GitHub/Parsers1/
-/GitHub/Parsers/database/
-/GitHub/Parsers/metinvest/

@@ -1,3 +1,0 @@
-ERROR 2024-01-21 19:08:26,426 В get_memory_info: недостаточно строк данных для обработки из команды ps в терминале
-ERROR 2024-01-21 19:11:43,964 in send_end_parsing_status_cmc(): [Errno 2] No such file or directory: 'start_time.txt'
-ERROR 2024-01-21 19:11:46,157 in send_error_to_cmc: HTTPConnectionPool(host='185.178.47.106', port=4200): Max retries exceeded with url: /receive_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000226740B89D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))

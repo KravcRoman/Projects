@@ -4,7 +4,7 @@
 
 <h5 align="center">В данном репозитории представлена часть моих работ!</h5>
 
-<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Freelancing" target="_blank">Freelancing</a> - часть проектов, которые были выполнены на фрилансе и тестовые для трудоустройства. Практически к каждому проекту есть ТЗ в файле с окончанием -  <a> Task.txt </a> </h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Freelancing" target="_blank">Freelancing</a> - часть проектов, которые были выполнены на фрилансе и тестовые для трудоустройства. Практически к каждому проекту есть ТЗ в файле с окончанием -  <b>Task.txt </b></h5>
 
 <h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/Kuban_result" target="_blank">Kuban_result</a> - пару проектов с первой работы</h5>
 

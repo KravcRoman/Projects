@@ -8,10 +8,8 @@
 
 <h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Kuban_result" target="_blank">Kuban_result</a> - пару проектов с первой работы</h5>
 
-<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers" target="_blank">Parsers</a> - мои парсеры</h5>
+<h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers" target="_blank">Parsers</a> - мои парсеры сайтов (название папки - название сайта, который парсился) с использованием ЦУП</h5>
 
 <h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/TEST" target="_blank">TEST</a> - одно из тестовых заданий</h5>
 
 <h5 align="center">В папках <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/TG_bots" target="_blank">TG_bots</a> и <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers/tg_bot" target="_blank">tg_bot</a> - Телеграм боты, которые писал на фрилансе</h5>
-
-</article> <h5 align="center">Все остальные папки представляют собой парсеры сайтов (название папки - название сайта, который парсился) с использованием ЦУП</h5> 

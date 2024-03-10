@@ -11,4 +11,4 @@
 <h5 align="center">В папке <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers" target="_blank">Parsers</a> - мои парсеры сайтов (название папки - название сайта, который парсился) с использованием ЦУП</h5>
 
 
-<h5 align="center">В папках <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/TG_bots" target="_blank">TG_bots</a> и <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers/tg_bot" target="_blank">tg_bot</a> - Телеграм боты, которые писал на фрилансе</h5>
+<h5 align="center">В папках <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/TG_bots" target="_blank">TG_bots</a> и <a href="https://github.com/KravcRoman/Projects/tree/main/GitHub/Parsers/tg_bot" target="_blank">tg_bot</a> - Телеграм боты</h5>

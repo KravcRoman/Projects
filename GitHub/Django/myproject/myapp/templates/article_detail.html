@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.text }}</p>
+    <p>Published on: {{ article.pub_date }}</p>
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in article.comment_set.all %}
+        <li>{{ comment.text }} - {{ comment.pub_date }}</li>
+        {% empty %}
+        <li>No comments yet.</li>
+        {% endfor %}
+    </ul>
+    <h3>Add a comment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	font-family: "FuturaPT-regular";
+	font-size: 16px;
+}
+
+.container {
+	max-width: 1226px;
+	margin: 0 auto;
+	padding: 0 5px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* TITLE */
+.title {
+	font-family: "FuturaPT-bold";
+	font-size: 20px;
+}
+
+/* BTNS */
+.buttons {
+	display: flex;
+}
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-right: 30px;
+}
+.btn-text {
+	font-size: 18px;
+	color: #0A5BFF;
+}
+.btn-icon {
+	margin-right: 8px;
+}
+
+/* CALCULATION */

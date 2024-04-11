@@ -1,0 +1,334 @@
+{% load static %}
+
+<!DOCTYPE html><!-- saved from url=(0022)https://prod.pkf-m.ru/ -->
+<html lang="en">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/static/lk_files/fontawesome.min.css">
+ <link rel="stylesheet" href="/static/lk_files/reset.css">
+ <link rel="stylesheet" href="/static/lk_files/fonts.css">
+ <link rel="stylesheet" href="/static/lk_files/header.css">
+ <link rel="stylesheet" href="/static/lk_files/delivery.css">
+ <link rel="stylesheet" href="/static/lk_files/positions.css">
+ <link rel="stylesheet" href="/static/lk_files/total.css">
+ <link rel="stylesheet" href="/static/lk_files/media.css">
+ <link rel="stylesheet" href="/static/lk_files/style.css">
+ <title>Личный кабинет</title>
+ <link href="/static/lk_files/bootstrap.min.css" rel="stylesheet">
+ <link href="/static/lk_files/dashboard.css" rel="stylesheet">
+ <link rel="stylesheet" href="/static/lk_files/bootstrap-icons.css">
+ <link href="/static/css/lk_kp.css" rel="stylesheet">
+
+ <style>
+
+        .empty-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+
+        .empty-table th {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+
+        .empty-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+           #results-container {
+
+  display: flex;
+}
+        #product-results
+        {
+      position: absolute;
+
+      left: 50%;
+      background-color: white;
+
+      max-height: 200px;
+     /*overflow-y: auto; */
+      width: 50%;
+      flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+    #category-results {
+      position: absolute;
+
+
+      left: 0;
+      background-color: white;
+
+      max-height: 200px;
+      /*overflow-y: auto; */
+      width: 50%;
+      flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.result {
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  padding: 10px;
+}
+
+.result:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.hover_price:hover {
+  background-color: #aaffaa;
+}
+
+ {% block css %} {% endblock %}
+
+ </style>
+</head>
+
+<body>
+<header class="header">
+ <div class="header__top">
+  <div class="container">
+   <div class="header__top-inner">
+    <div class="header__logo">
+     <a href="http://metinvest-service.ru"> <img class="logo" src="/static/lk_files/logo.svg" alt=""> </a>
+    </div>
+    <div class="header__contacts">
+     <address>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-clock.svg" alt="">
+       <div class="address__item-text">
+        <a href="http://metinvest-service.ru">Круглосуточная поддержка</a>
+       </div>
+      </div>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-phone.svg" alt="">
+       <div class="address__item-text">
+        <a href="tel:+78006003327">8 800 600-33-27</a>
+       </div>
+      </div>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-mail.svg" alt="">
+       <div class="address__item-text">
+        <a href="mailto:">order@metinvest-service.ru</a>
+       </div>
+      </div>
+     </address>
+    </div>
+    <div class="header__user">
+     <img class="header__user-img" src="/static/lk_files/user.svg" alt="">
+     <img class="arrow-down" src="/static/lk_files/arrow-down.svg" alt="">
+    </div>
+   </div>
+  </div>
+ </div>
+ <nav class="nav">
+  <div class="container">
+   <div class="nav__inner">
+    <ul class="nav__list">
+
+     <a class="nav__item-link" href="/">
+      <li class="nav__item">Расчет</li>
+     </a>
+
+     <a class="nav__item-link" href="/upload" style="margin-right: 400px">
+      <li class="nav__item">Загрузить</li>
+     </a>
+
+
+     <a class="nav__item-link" href="/products">
+      <li class="nav__item">Товары</li>
+     </a>
+
+     <a class="nav__item-link" href="/categories">
+      <li class="nav__item">Категории</li>
+     </a>
+
+     <a class="nav__item-link" href="/suppliers">
+      <li class="nav__item">Поставщики</li>
+     </a>
+
+     <a class="nav__item-link" href="/cities">
+      <li class="nav__item">Города</li>
+     </a>
+
+     <a class="nav__item-link" href="/sites">
+      <li class="nav__item">Сайты</li>
+     </a>
+
+    </ul>
+   </div>
+  </div>
+ </nav>
+</header>
+
+<div class="delivery" style="background-color: #eeeeee; margin-bottom: 40px">
+
+<!-- <div class="container">-->
+<!--  <div class="delivery__inner">-->
+<!--   <div class="delivery__item">-->
+<!--    <p class="delivery__title title">metinvest. <span >Введите адрес доставки</span></p>-->
+<!--   </div>-->
+<!--  </div>-->
+<!-- </div>-->
+
+<!-- <div class="navbar sticky-top flex-md-nowrap p-0 shadow delivery__select-wrapper">-->
+<!--  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" style="color: black; text-align: right" href="/">Место назначения:</a>-->
+<!--  <input-->
+<!--    class="form-control w-100" type="text" id="address-input" placeholder="Адрес" aria-label="Search" autocomplete="off">-->
+<!-- </div>-->
+
+<!-- <div class="navbar sticky-top flex-md-nowrap p-0 shadow delivery__select-wrapper">-->
+<!--    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" style="color: black; text-align: right" href="/">Регион поиска товара:</a>-->
+<!--    <div class="region__select-wrapper" style="width: 100%; ">-->
+<!--     <select class="region__select" name="" style="border: 0px; background: none; font-size: 1rem">-->
+<!--      <option class="region__select-item" value="" selected="">Ближайший по адресу доставки</option>-->
+<!--      <option class="region__select-item" value="">Москва</option>-->
+<!--      <option class="region__select-item" value="">Санкт-Петербург</option>-->
+<!--      <option class="region__select-item" value="">Владивосток</option>-->
+<!--     </select>-->
+<!--    </div>-->
+<!--   </div>-->
+
+<!--</div>-->
+
+<!--<hr>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% block content %} {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+
+<script src="/static/js/lk_test.js"></script>
+
+<script src="/static/lk_test_files/jquery.min.js.Без названия"></script>
+<script src="/static/lk_test_files/clipboard.min.js.Без названия"></script>
+<script src="/static/lk_test_files/dashboard.js.Без названия"></script>
+
+
+<link rel="stylesheet" href="./lk_test_files/jquery-ui.css">
+
+<script src="/static/lk_test_files/jquery-ui.js.Без названия"></script>
+
+<script src="/static/lk_files/bootstrap.bundle.min.js"></script>
+<script src="/static/lk_files/jquery.min.js"></script>
+<script src="/static/lk_files/clipboard.min.js"></script>
+<script src="/static/lk_files/dashboard.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!--    <script>--><!--    $(document).ready(function() {--><!--      $("#search-input").autocomplete({--><!--        source: function(request, response) {--><!--          $.ajax({--><!--            url: "/search_auto_product/",--><!--            type: "POST",--><!--            dataType: "json",--><!--            data: {--><!--              query: request.term--><!--            },--><!--            success: function(data) {--><!--              response(data.suggestions);--><!--            },--><!--            error: function(xhr, status, error) {--><!--              console.error("Ошибка запроса к серверу ElasticSearch: " + error);--><!--            }--><!--          });--><!--        },--><!--        minLength: 2--><!--      });--><!--    });--><!--    </script>-->
+</script>
+
+ {% block javascript %} {% endblock %}

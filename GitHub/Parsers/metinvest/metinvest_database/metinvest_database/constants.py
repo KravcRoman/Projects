@@ -1,0 +1,7 @@
+NAME = "name"
+PRICE = "price"
+SUPPLIER = "supplier"
+CITY = "city"
+DATA = "data"
+PARSER = "Parsers1"
+CATEGORY = "category"

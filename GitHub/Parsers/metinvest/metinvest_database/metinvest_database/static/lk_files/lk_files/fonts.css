@@ -1,0 +1,52 @@
+/* FONTS */
+@font-face {
+	font-family: "FuturaPT-bold";
+	font-weight: 700;
+	font-style: normal;
+	src: url("/fonts/FuturaPT-Bold.eot") format("eot"),
+			url("/fonts/FuturaPT-Bold.ttf") format("ttf"),
+			url("/fonts/FuturaPT-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: "FuturaPT-medium";
+	font-weight: 500;
+	font-style: normal;
+	src: url("/fonts/FuturaPT-Medium.eot") format("eot"),
+			url("/fonts/FuturaPT-Medium.ttf") format("ttf"),
+			url("/fonts/FuturaPT-Medium.woff") format("woff");
+}
+@font-face {
+	font-family: "FuturaPT-regular";
+	font-weight: 400;
+	font-style: inherit;
+	src: url("/fonts/FuturaPT-Book.ttf") format("ttf"),
+			url("/fonts/FuturaPT-Book.eot") format("eot"),
+			url("/fonts/FuturaPT-Book.woff") format("woff");
+}
+@font-face {
+	font-family: "Helvetica-bold";
+	font-weight: 700;
+	font-style: normal;
+	src: url("/fonts/HelveticaNeueCyr-Bold.eot") format("eot"),
+			url("/fonts/HelveticaNeueCyr-Bold.ttf") format("ttf"),
+			url("/fonts/HelveticaNeueCyr-Bold.woff") format("woff"),
+			url("/fonts/HelveticaNeueCyr-Bold.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Helvetica-regular";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/fonts/HelveticaNeueCyr-Roman.eot") format("eot"),
+			url("/fonts/HelveticaNeueCyr-Roman.ttf") format("ttf"),
+			url("/fonts/HelveticaNeueCyr-Roman.woff") format("woff"),
+			url("/fonts/HelveticaNeueCyr-Roman.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Helvetica-medium";
+	font-weight: 500;
+	font-style: normal;
+	src: url("/fonts/HelveticaNeueCyr-Medium.eot") format("eot"),
+			url("/fonts/HelveticaNeueCyr-Medium.ttf") format("ttf"),
+			url("/fonts/HelveticaNeueCyr-Medium.woff") format("woff"),
+			url("/fonts/HelveticaNeueCyr-Medium.woff2") format("woff2");
+}

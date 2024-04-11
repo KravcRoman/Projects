@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/static/lk_files/fontawesome.min.css">
+ <link rel="stylesheet" href="/static/lk_files/reset.css">
+ <link rel="stylesheet" href="/static/lk_files/fonts.css">
+ <link rel="stylesheet" href="/static/lk_files/header.css">
+ <link rel="stylesheet" href="/static/lk_files/delivery.css">
+ <link rel="stylesheet" href="/static/lk_files/positions.css">
+ <link rel="stylesheet" href="/static/lk_files/total.css">
+ <link rel="stylesheet" href="/static/lk_files/media.css">
+ <link rel="stylesheet" href="/static/lk_files/style.css">
+ <title>Личный кабинет</title>
+ <link href="/static/lk_files/bootstrap.min.css" rel="stylesheet">
+ <link href="/static/lk_files/dashboard.css" rel="stylesheet">
+ <link rel="stylesheet" href="/static/lk_files/bootstrap-icons.css">
+ <title>Ваша страница</title>
+ <link href="/static/css/lk_kp.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+ <div class="header__top">
+  <div class="container">
+   <div class="header__top-inner">
+    <div class="header__logo">
+ <a href="https://prod.pkf-m.ru/#"> <img class="logo" src="/static/lk_files/logo.svg " alt=""> </a>
+
+    </div>
+    <div class="header__contacts">
+     <address>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-clock.svg" alt="">
+       <div class="address__item-text">
+        <a href="https://prod.pkf-m.ru/">Круглосуточная поддержка</a>
+       </div>
+      </div>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-phone.svg" alt="">
+       <div class="address__item-text">
+        <a href="tel:+78006003327">8 800 600-33-27</a>
+       </div>
+      </div>
+      <div class="address__item">
+       <img class="address__item-icon" src="/static/lk_files/icon-mail.svg" alt="">
+       <div class="address__item-text">
+        <a href="mailto:">info@pkf-m.ru</a>
+       </div>
+      </div>
+     </address>
+    </div>
+    <div class="header__user">
+      <img class="header__user-img" src="/static/./lk_test_files/user.svg" alt=""> <img class="arrow-down" src="/static/./lk_test_files/arrow-down.svg" alt="">
+    </div>
+   </div>
+  </div>
+ </div>
+ <nav class="nav">
+  <div class="container">
+   <div class="nav__inner">
+    <ul class="nav__list">
+     <a class="nav__item-link" href="http://176.57.213.189:8000/">
+      <li class="nav__item">Расчет стоимости</li>
+     </a> <a class="nav__item-link" href="https://prod.pkf-m.ru/">
+     </a><a class="nav__item-link" href="http://176.57.213.189:8000/create-supplier">
+      <li class="nav__item">Поставщики</li>
+     </a> <a class="nav__item-link" href="https://prod.pkf-m.ru/">
+     <li class="nav__item">История</li>
+    </a>
+    </ul>
+   </div>
+  </div>
+ </nav>
+</header>
+
+<div class="delivery" style="background-color: #eeeeee; margin-bottom: 40px">
+
+
+<div class="positions__header" style="background-color: #eeeeee">
+ <div class="container">
+  <div class="positions__header-inner">
+   <p class="positions__title title">1. <span>Добавьте позиции</span></p>
+
+  </div>
+ </div>
+</div>
+
+<form method="post" action="http://176.57.213.189:8000/">
+ <div class="navbar sticky-top flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" style="color: black; text-align: right" href="http://176.57.213.189:8000/">Введите наименование:</a> <input class="form-control w-100 ui-autocomplete-input" type="text" id="search-input" placeholder="Поиск" aria-label="Search" autocomplete="off">
+  <button class="btn btn-primary" id="search-button" style="margin-left: 40px; display: none">Поиск</button>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+ </div>
+</form>
+
+
+
+<div>
+ <div style="text-align: center; font-size: 24px; margin-top: 25px;" class="search-data">Товары</div>
+ <table id="products_table" class="products__table empty-table search-data" style="">
+ <thead>
+
+ <tr><th>Категория</th><th>Наименование</th><th>Характеристики</th><th>Город</th><th>Поставщик</th><th>Цена</th></tr></thead>
+ <tbody><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 0)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  Бунты<br><b>Класс</b>:  A1<br><b>Объём</b>:  1<br><b>Сплав</b>:  3СП<br><b>Прочее</b>:  21.09.2023<br><b>Диаметр</b>:  6<br></td><td>ННов</td><td>Мечел</td><td>0</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 15)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Класс</b>:  АСП<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  4<br></td><td>СПб</td><td>Новосаратовка</td><td>15</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, )"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Длина</b>:  100м<br><b>Прочее</b>:  03.04.2023<br><b>Диаметр</b>:  4<br><b>Примечание</b>:  бухта<br></td><td>Не определен</td><td>ИП Кузьминых</td><td></td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 17)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Длина</b>:  бухта 100м<br><b>Объём</b>:  400,000<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6 (10)<br><b>Примечание</b>:  стеклоплас...<br></td><td>Нкуз</td><td>ЭФЕС</td><td>17</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 19)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  бухта 50м<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  СК<br></td><td>Птз</td><td>Глостер</td><td>19</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, )"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Длина</b>:  бухта<br><b>Прочее</b>:  21.08.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  100 м/бухт...<br></td><td>Крсн</td><td>Сибирский металл</td><td></td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, )"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, композитная</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  п/м<br><b>Длина</b>:  бухта 100м<br><b>Прочее</b>:  25.09.2023<br><b>Диаметр</b>:  6<br></td><td>Чел</td><td>Металлснаб-Урал</td><td></td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 70620)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  52544-2006...<br><b>Длина</b>:  8<br><b>Класс</b>:  А500С<br><b>Сплав</b>:  3сп/пс<br><b>Прочее</b>:  28.08.2023<br><b>Диаметр</b>:  3<br></td><td>Тюм</td><td>Тримет</td><td>70620</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 75000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6м<br><b>Класс</b>:  A1<br><b>Прочее</b>:  25.09.2023<br><b>Диаметр</b>:  4<br></td><td>Смк</td><td>ДиПОС</td><td>75000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 0)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Класс</b>:  В500С<br><b>Объём</b>:  20<br><b>Прочее</b>:  21.09.2023<br><b>Диаметр</b>:  6<br></td><td>Сарат</td><td>Мечел</td><td>0</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 9,2)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Длина</b>:  бухта<br><b>Класс</b>:  A1<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>СПб</td><td>Новосаратовка</td><td>9,2</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 21)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  м<br><b>Класс</b>:  В500С<br><b>Объём</b>:  21471,420<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>Нкуз</td><td>ЭФЕС</td><td>21</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 66)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  кг<br><b>Длина</b>:  6,02<br><b>Сплав</b>:  25Г2С<br><b>Прочее</b>:  26.03.2021<br><b>Диаметр</b>:  6<br></td><td>Ввк</td><td>Мартен</td><td>66</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 70)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  кг<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  6м<br><b>Класс</b>:  А500С<br><b>Объём</b>:  9,865<br><b>Прочее</b>:  28.09.2023<br><b>Диаметр</b>:  6<br></td><td>Кург</td><td>УТК</td><td>70</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 73,5)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6<br><b>Класс</b>:  А1, А3<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>Псков</td><td>Металлпроф</td><td>73,5</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 55800)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  2<br><b>Класс</b>:  A1<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>СПб</td><td>Сталь-Череповец</td><td>55800</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 59400)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта<br><b>Класс</b>:  А240<br><b>Сплав</b>:  3сп/пс<br><b>Прочее</b>:  31.08.2023<br><b>Диаметр</b>:  6<br></td><td>Иван</td><td>ДиПОС</td><td>59400</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 60790)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6000<br><b>Класс</b>:  A1<br><b>Объём</b>:  9<br><b>Сплав</b>:  А240<br><b>Прочее</b>:  26.08.2023<br><b>Диаметр</b>:  6<br></td><td>Мск</td><td>Металлсервис Лобня</td><td>60790</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 61000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  5781-82<br><b>Длина</b>:  бух<br><b>Класс</b>:  A1<br><b>Сплав</b>:  А240<br><b>Прочее</b>:  15.03.2023<br><b>Диаметр</b>:  6<br></td><td>Нсб</td><td>Феррум</td><td>61000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 63500)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта<br><b>Класс</b>:  А240<br><b>Сплав</b>:  3сп/пс<br><b>Прочее</b>:  31.08.2023<br><b>Диаметр</b>:  6<br></td><td>СПб</td><td>ДиПОС</td><td>63500</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 63981)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  52544-2006<br><b>Класс</b>:  В500С<br><b>Объём</b>:  0,800<br><b>Прочее</b>:  18.07.2023<br><b>Диаметр</b>:  6<br></td><td>Мгнк</td><td>ММК Метиз</td><td>63981</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 65000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  бухта<br><b>Класс</b>:  A3<br><b>Объём</b>:  0,65<br><b>Сплав</b>:  25гс<br><b>Прочее</b>:  14.08.2023<br><b>Диаметр</b>:  6<br></td><td>Не определен</td><td>Гарус-МК</td><td>65000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 75000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А240С<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Тула</td><td>Евраз</td><td>75000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 75000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6000<br><b>Класс</b>:  А500С<br><b>Прочее</b>:  25.09.2023<br><b>Диаметр</b>:  6<br></td><td>Бтк</td><td>Сталь-Инвест</td><td>75000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 75560)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А240<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Брл</td><td>Евраз</td><td>75560</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 76260)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  5781-82<br><b>Класс</b>:  А240<br><b>Сплав</b>:  3сп<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Минводы</td><td>Евраз</td><td>76260</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 76330)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  5781-82<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А3<br><b>Сплав</b>:  35ГС<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  рифленая<br></td><td>Кмр</td><td>Евраз</td><td>76330</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 76760)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А240<br><b>Сплав</b>:  3сп<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Крсн</td><td>Евраз</td><td>76760</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 77000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>Пнз</td><td>ГК Демидов</td><td>77000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 77100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта_АЭМЗ<br><b>Класс</b>:  А500С<br><b>Объём</b>:  20,58<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  2094,446<br></td><td>Вгд</td><td>Металлоторг</td><td>77100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 77100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта_АЭМЗ<br><b>Класс</b>:  А500С<br><b>Объём</b>:  20,76<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  2134<br></td><td>Кдр</td><td>Металлоторг</td><td>77100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 77100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта_АЭМЗ<br><b>Класс</b>:  А500С<br><b>Объём</b>:  37,79<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  2073<br></td><td>РнД</td><td>Металлоторг</td><td>77100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 77250)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А240<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Сарат</td><td>Евраз</td><td>77250</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 78100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта_БМЗ<br><b>Класс</b>:  А240С<br><b>Объём</b>:  47,87<br><b>Сплав</b>:  А1<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  1797<br></td><td>Кга</td><td>Металлоторг</td><td>78100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 78100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  бухта_БМЗ<br><b>Класс</b>:  А500С<br><b>Объём</b>:  5,3<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  1774<br></td><td>Пнз</td><td>Металлоторг</td><td>78100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 79000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  бухта<br><b>Класс</b>:  A3<br><b>Сплав</b>:  А500С<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>Под</td><td>Омега Металл</td><td>79000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 79000)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А240<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Орен</td><td>Евраз</td><td>79000</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 79650)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028<br><b>Длина</b>:  бухта<br><b>Класс</b>:  A1<br><b>Сплав</b>:  А1(А240)<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Хаб</td><td>А-Групп</td><td>79650</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 79760)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А400<br><b>Сплав</b>:  25Г2С<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  рифленая<br></td><td>Ирк</td><td>Евраз</td><td>79760</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 83200)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Класс</b>:  A3<br><b>Сплав</b>:  А500C<br><b>Прочее</b>:  18.09.2023<br><b>Диаметр</b>:  6<br></td><td>Дуб</td><td>Орион</td><td>83200</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 79800)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6000<br><b>Объём</b>:  0,245<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br></td><td>Лип</td><td>ПОЛАНДР</td><td>79800</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 80100)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А240<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Мгнк</td><td>Евраз</td><td>80100</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 80200)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  мотки<br><b>Класс</b>:  А240<br><b>Прочее</b>:  21.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Екб</td><td>Евраз Шувакиш</td><td>80200</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 80400)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Длина</b>:  Мотки<br><b>Класс</b>:  A1<br><b>Сплав</b>:  3сп<br><b>Прочее</b>:  29.09.2023<br><b>Диаметр</b>:  6<br></td><td>Нсб</td><td>МеталлКомплектСнаб</td><td>80400</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 81810)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А500С<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  рифленая<br></td><td>Бгд</td><td>Евраз</td><td>81810</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 82800)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А500С<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  рифленая<br></td><td>Кир</td><td>Евраз</td><td>82800</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 82700)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Длина</b>:  6м<br><b>Класс</b>:  A1<br><b>Сплав</b>:  3<br><b>Прочее</b>:  25.09.2023<br><b>Диаметр</b>:  6<br></td><td>Нмск</td><td>ДиПОС</td><td>82700</td></tr><tr style="background-color: #ffffff" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 82800)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А500С<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  рифленая<br></td><td>Каз</td><td>Евраз</td><td>82800</td></tr><tr style="background-color: rgb(170, 255, 170);" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 82820)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  34028-2016<br><b>Класс</b>:  А240<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>СОл</td><td>Евраз</td><td>82820</td></tr><tr style="background-color: rgb(170, 255, 170);" class="hover_price" onclick="addCheck(this);addSelectedProduct(&#39;cм. категорию + характеристики&#39;, 82820)"><td>ЧЁРНЫЙ МЕТАЛЛ, Арматура, металлическая</td><td><div font-size:="" 18px="">cм. категорию + характеристики</div></td><td><b>Ед</b>:  т<br><b>Гост</b>:  5781-82<br><b>Класс</b>:  А1<br><b>Сплав</b>:  3сп<br><b>Прочее</b>:  20.09.2023<br><b>Диаметр</b>:  6<br><b>Примечание</b>:  гладкая<br></td><td>Лип</td><td>Евраз</td><td>82820</td></tr></tbody>
+</table>
+
+
+<div style="text-align: center; font-size: 24px; margin-top: 25px;" class="search-data">Категории</div>
+<table id="categories_table" class="products__table empty-table search-data" style="">
+ <thead>
+
+ </thead>
+ <tbody></tbody>
+</table>
+</div>
+
+<div class="pagination search-data" style="text-align: center; margin-top: 25px; margin-bottom: 40px; margin-left: 40%;">
+ <button id="prev-page" style="margin-right: 17px">Предыдущая страница</button>
+ <span id="current-page">Страница 1</span>
+ <button id="next-page" style="margin-left: 17px">Следующая страница</button>
+</div>
+
+<div class="empty-caption not-search-data" style="text-align: center; margin-top: 25px; margin-bottom: 25px; display: none;">
+ <span>Здесь появятся найденные товары</span>
+</div>
+
+
+<hr>
+
+<div class="positions__header" style="background-color: #eeeeee; margin-top: 40px">
+ <div class="container">
+  <div class="positions__header-inner">
+   <p class="positions__title title">2. <span>
+               Отредактируйте позиции или добавьте новые</span></p>
+
+  </div>
+ </div>
+</div>
+<table id="selected_products" style="margin-bottom: 40px" class="empty-table">
+ <tbody><tr>
+  <th>Позиция</th>
+  <th>Цена</th>
+  <th>Кол-во</th>
+  <th>Ед</th>
+  <th>Сумма</th>
+  <th>Примечание</th>
+  <th>X</th>
+ </tr>
+ <tr>
+  <td><input id="new_position" type="text" placeholder="Новая позиция"></td>
+  <td><input id="new_price" type="text" placeholder="Стоимость"></td>
+  <td><!--<input id="new_q" type="text" placeholder="Кол-во"/>--></td>
+  <td><!--<input id="new_units" type="text" placeholder="Ед."/>--></td>
+  <td></td>
+  <td><input style="width: 100%" type="text" placeholder="Комментарий"></td>
+  <td>
+   <span style="color: black; cursor: pointer; border: 1px black solid; background-color: #ffffff; padding: 3px" class="delete-text" onclick="addSelectedProduct($(&#39;#new_position&#39;).val(), $(&#39;#new_price&#39;).val());  $(&#39;#new_price&#39;).val(&#39;&#39;)">
+    Добавить в таблицу
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<hr>
+
+<div class="positions__header" style="background-color: #eeeeee; margin-top: 40px">
+ <div class="container">
+  <div class="positions__header-inner">
+   <p class="positions__title title">3. <span>
+               Ознакомьтесь с предварительным расчетом</span>
+    <!--              <div class="buttons">-->
+    <!--                <a class="btn" href="">-->
+    <!--                  <img class="btn-icon" src="/static/images/positions/download.svg" alt="">-->
+    <!--                  <span class="btn-text">Скачать расчет</span>-->
+    <!--                </a>-->
+    <!--                <a class="btn" href="">-->
+    <!--                  <img class="btn-icon" src="/static/images/positions/print.svg" alt="">-->
+    <!--                  <span class="btn-text">Распечатать</span>-->
+    <!--                </a>-->
+    <!--              </div>-->
+  </p></div>
+ </div>
+</div>
+
+
+{% include "./lk_kp_part.html" %}
+<hr style="margin-bottom: 40px">
+
+<script src="/static/lk_files/bootstrap.bundle.min.js"></script>
+<script src="/static/lk_files/jquery.min.js"></script>
+<script src="/static/lk_files/clipboard.min.js"></script>
+<script src="/static/lk_files/dashboard.js"></script>
+</div>
+</body>
+</html>
+<script src="/static/./js/lk_test.js"></script>
+<script src="/static/./js/lk_kp.js"></script>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!--    <script>--><!--    $(document).ready(function() {--><!--      $("#search-input").autocomplete({--><!--        source: function(request, response) {--><!--          $.ajax({--><!--            url: "/search_auto_product/",--><!--            type: "POST",--><!--            dataType: "json",--><!--            data: {--><!--              query: request.term--><!--            },--><!--            success: function(data) {--><!--              response(data.suggestions);--><!--            },--><!--            error: function(xhr, status, error) {--><!--              console.error("Ошибка запроса к серверу ElasticSearch: " + error);--><!--            }--><!--          });--><!--        },--><!--        minLength: 2--><!--      });--><!--    });--><!--    </script>-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

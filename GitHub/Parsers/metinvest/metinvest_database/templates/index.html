@@ -1,0 +1,521 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+ {% block content %}
+
+<div class="positions__header" style="background-color: #eeeeee">
+ <div class="container">
+  <div class="positions__header-inner">
+   <p class="positions__title title" style="text-align: center">
+    <span>
+     Ищите среди <b>{{ products_count }}</b> наименований в <b>{{ categories_count }}</b> категориях от <b>{{ suppliers_count }}</b> поставщиков в <b>{{ cities_count }}</b> городах по данным <b>{{ parsers_count }}</b> сайтов
+    </span>
+   </p>
+  </div>
+ </div>
+</div>
+
+ <hr>
+
+<div class="positions__header" style="background-color: #eeeeee">
+ <div class="container">
+  <div class="positions__header-inner">
+   <p class="positions__title title">1. <span ><b>Добавьте позиции</b></span></p>
+   <!--              <div class="buttons">-->
+   <!--                <a class="btn" href="">-->
+   <!--                  <img class="btn-icon" src="/static/images/positions/download.svg" alt="">-->
+   <!--                  <span class="btn-text">Скачать расчет</span>-->
+   <!--                </a>-->
+   <!--                <a class="btn" href="">-->
+   <!--                  <img class="btn-icon" src="/static/images/positions/print.svg" alt="">-->
+   <!--                  <span class="btn-text">Распечатать</span>-->
+   <!--                </a>-->
+   <!--              </div>-->
+  </div>
+ </div>
+</div>
+
+<form method="post" action="/">
+
+ <div>
+  <table width="100%">
+    {% for cities_row in cities %}
+    <tr>
+     {% for city in cities_row %}
+      <td>
+       <input onclick="search()" name="city" type="checkbox" id="city_{{city.id}}" value="{{ city.name }}" style="margin: 5px">
+       <label for="city_{{city.id}}">{{ city.name }}</label>
+      </td>
+     {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+ </div>
+
+ <div style="text-align: right; margin: 25px">
+  <span>Выводить по:</span>
+  <select id="select_limit" name="limit">
+   <option value="30" selected >30</option>
+   <option value="10">10</option>
+   <option value="25">25</option>
+   <option value="50">50</option>
+   <option value="100">100</option>
+  </select>
+ </div>
+
+ <div class="navbar sticky-top flex-md-nowrap p-0 shadow">
+  <a id="input_name" class="navbar-brand col-md-3 col-lg-2 me-0 px-3" style="color: black; text-align: right" href="/">Введите наименование:</a> <input
+    class="form-control w-100" type="text" id="search-input" placeholder="Поиск" aria-label="Search" autocomplete="off">
+  <button class="btn btn-primary" id="search-button" style="margin-left: 40px; display: none">Поиск</button>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+ </div>
+</form>
+
+
+<!--<div id="results-container" style="display:none" class="search-data">-->
+<!-- <div id="category-results"></div>-->
+<!-- <div id="product-results"></div>-->
+<!--</div>-->
+
+<div>
+ <div style="text-align: center; display: none; font-size: 24px; margin-top: 25px" class="search-data">Товары</div>
+ <table id="products_table" class="products__table empty-table search-data" style="display:none">
+ <thead>
+ <tr class="table__first-tr">
+  <th class="products__table-th">Категория</th>
+  <th class="products__table-th">Наименование</th>
+  <th class="products__table-th">Характеристики</th>
+  <th class="products__table-th">Город</th>
+  <th class="products__table-th">Поставщик</th>
+  <th class="products__table-th">Источник</th>
+  <th class="products__table-th">Цена</th>
+ </tr>
+ </thead>
+ <tbody></tbody>
+</table>
+
+ <div id="show_more" style="text-align: center; margin-top: 25px;">
+ </div>
+
+<div style="text-align: center; display: none; font-size: 24px; margin-top: 25px" class="search-data">Категории</div>
+<table id="categories_table" class="products__table empty-table search-data" style="display:none">
+ <thead>
+ <tr class="table__first-tr">
+  <th class="products__table-th">Наименование</th>
+ </tr>
+ </thead>
+ <tbody></tbody>
+</table>
+</div>
+
+<div class="empty-caption not-search-data" style="text-align: center; margin-top: 75px; margin-bottom: 75px">
+ <span>Здесь появятся найденные товары</span>
+</div>
+
+<hr>
+
+<div class="positions__header" style="background-color: #eeeeee; margin-top: 40px">
+<div class="container">
+<div class="positions__header-inner">
+<p class="positions__title title">2. <span>
+Ознакомьтесь с предварительным расчетом</span>
+</p></div>
+</div>
+</div>
+{% include "./lk_kp_part.html" %}
+<hr style="margin-bottom: 40px">
+<script src="/static/lk_files/bootstrap.bundle.min.js">null</script>
+<script src="/static/lk_files/jquery.min.js">null</script>
+<script src="/static/lk_files/clipboard.min.js">null</script>
+<script src="/static/lk_files/dashboard.js">null</script>
+</div>
+</body>
+</html>
+<script src="/static/./js/lk_test.js">null</script>
+<script src="/static/js/lk_kp_number_to_words.js"></script>
+<script src="/static/js/lk_kp_main.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">null</script>
+<script
+src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!--    <script>--><!--    $(document).ready(function() {--><!--      $("#search-input").autocomplete({--><!--        source: function(request, response) {--><!--          $.ajax({--><!--            url: "/search_auto_product/",--><!--            type: "POST",--><!--            dataType: "json",--><!--            data: {--><!--              query: request.term--><!--            },--><!--            success: function(data) {--><!--              response(data.suggestions);--><!--            },--><!--            error: function(xhr, status, error) {--><!--              console.error("Ошибка запроса к серверу ElasticSearch: " + error);--><!--            }--><!--          });--><!--        },--><!--        minLength: 2--><!--      });--><!--    });--><!--    </script>-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">null</script>
+```
+
+
+<hr style="margin-bottom: 40px">
+
+
+ {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javascript%}
+<script>
+  var timeoutId;
+
+  var data = {}; // Глобальная переменная для хранения данных
+  var positions = 0;
+
+  var productsDone = false;
+  var countDone = false;
+  var categoriesDone = false;
+
+  var query;
+  var timeout;
+  var last_query = '';
+  var products_offset = 0;
+
+  function hideResults() {
+    $("#product-results").empty();
+    $("#category-results").empty();
+
+    $('.search-data').hide();
+    $('.not-search-data').show();
+  }
+
+  function showResults() {
+    $('.search-data').show();
+    $('.not-search-data').hide();
+  }
+
+  function deletePosition(position) {
+    $('#position' + position).remove();
+    refreshDocument();
+  }
+
+  function makePrice(price) {
+    if (price.indexOf(';') == -1) {
+      if (price.replace(/[^\d]/g, '') == '') {
+        return 0;
+      } else {
+        return price.replace(' ', '').replace('RUB', '').replace(/[^.,\d]/g, '');
+      }
+    } else {
+      return price;
+    }
+  }
+
+  function updateDataOnPage(query, offset, limit, load_more) {
+    //if (productsDone && countDone && categoriesDone) {
+        $('#input_name').text('Введите наименование');
+
+        if (load_more) {
+          $('#products_table tr:last').remove();
+        } else {
+          $('.products__table thead tr').remove();
+          $('.products__table tbody').empty();
+        }
+
+        if (data.products && data.products.length > 0) {
+          if (!load_more) {
+            var headerRow = $('<tr>');
+
+            var categoryHeader = $('<th>').text('Категория');
+            headerRow.append(categoryHeader);
+            var nameHeader = $('<th>').text('Наименование');
+            headerRow.append(nameHeader);
+            var characteristicsHeader = $('<th>').text('Характеристики');
+            headerRow.append(characteristicsHeader);
+            var cityHeader = $('<th>').text('Город');
+            headerRow.append(cityHeader);
+            var supplierHeader = $('<th>').text('Поставщик');
+            headerRow.append(supplierHeader);
+            var siteHeader = $('<th>').text('Источник');
+            headerRow.append(siteHeader);
+            var priceHeader = $('<th>').html('Цена');
+            headerRow.append(priceHeader);
+            var updatedHeader = $('<th>').text('Обновлено');
+            headerRow.append(updatedHeader);
+
+            $('#products_table thead').append(headerRow);
+          }
+
+          var products = data.products;
+          for (var i = 0; i < products.length; i++) {
+            var productCategory = products[i].category.name;
+            var productName = products[i].name;
+            var productHtml = products[i].html;
+            var productData = products[i].data;
+            var productCity = products[i].city;
+            var productSupplier = products[i].supplier.name;
+            var productSite = products[i].category.parser_name;
+            var productPrice = products[i].price.replace(',', ' ').replace('<br/>', '; ');
+            var productUpdated = products[i].updated;
+
+            var newRow = $('<tr style="background-color: #ffffff" class="hover_price" style="cursor: pointer" onclick="addCheck(this)" ' +
+                ' ondblclick="addSelectedProduct(\'' + productName + '\', \'' + makePrice(productPrice) + '\')">');
+            var categoryCell = $('<td>').html(productCategory);
+            var nameCell = $('<td>').html('<div font-size: 18px>' + productHtml + '</div>');
+            var productHtml = '';
+            for (var d = 0; d < Object.keys(productData).length; d++) {
+              if (productData[Object.keys(productData)[d]] != '') {
+                productHtml += '<b>' + Object.keys(productData)[d] + '</b>:  ' + productData[Object.keys(productData)[d]] + '<br/>'
+              }
+            }
+
+            var dataCell = $('<td>').html(productHtml);
+            var cityCell = $('<td>').html(productCity);
+            var supplierCell = $('<td>').html(productSupplier);
+            var siteCell = $('<td>').html(productSite);
+            var priceCell = $('<td>').text(productPrice);
+            var updatedCell = $('<td>').text(productUpdated);
+
+            newRow.append(categoryCell);
+            newRow.append(nameCell);
+            newRow.append(dataCell);
+            newRow.append(cityCell);
+            newRow.append(supplierCell);
+            newRow.append(siteCell);
+            newRow.append(priceCell);
+            newRow.append(updatedCell);
+
+            $('#products_table tbody').append(newRow);
+
+          }
+
+          products_offset += products.length;
+          console.log('offset ' + products_offset);
+          if (data.products_total > products_offset) {
+            var html = '<button onclick="load_more()">Показать еще</button><br/>' +
+                '<div id="products_left" style="margin-top: 15px">(' +
+                (data.products_total - products_offset) +
+                ' осталось)</div>';
+            $('#show_more') .html(html);
+          } else {
+            $('#show_more').html('<span id="products_left">Показаны все продукты</span>');
+          }
+
+        } else {
+          $('#products_table tbody').append('<tr><td style="text-align: center">Товары не найдены</td></tr>');
+        }
+
+        if (!load_more) {
+          if (data.categories && data.categories.length > 0) {
+
+            var categories = data.categories;
+            for (var i = 0; i < categories.length; i++) {
+              var category = categories[i];
+
+              var newRow = $('<tr style="background-color: #ffffff; text-align: center">');
+              var nameCell = $('<td style="text-align: center">').html(category.name);
+
+              newRow.prepend(nameCell);
+
+              $('#categories_table tbody').append(newRow);
+            }
+          } else {
+            var newRow = $('<tr style="background-color: #ffffff">');
+            var nameCell = $('<td style="text-align: center">').html("Категории не найдены");
+
+            newRow.prepend(nameCell);
+
+            $('#categories_table tbody').append(newRow);
+          }
+        }
+    //}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  function get_products(query, cities, offset, limit, load_more) {
+
+    xhr = $.ajax({
+      type: 'POST',
+      url: '/search/',
+      data: {
+        query: query,
+        cities: cities,
+        limit: limit,
+        products_offset: offset
+      },
+      success: function(responseData) {
+        data.products = responseData.products;
+        productsDone = true;
+        updateDataOnPage(query, offset, limit, load_more)
+      },
+
+      error: function(xhr, textStatus, errorThrown) {
+        console.error('Ошибка при выполнении запроса:', errorThrown);
+      }
+    });
+  }
+
+
+  function get_products_total(query, cities, offset, limit, load_more) {
+    xhr = $.ajax({
+      type: 'POST',
+      url: '/count/',
+      data: {
+        query: query,
+        cities: cities,
+        limit: limit,
+        products_offset: offset
+      },
+      success: function(responseData) {
+        data.products_total = responseData.products_total;
+        countDone = true;
+        updateDataOnPage(query, offset, limit, load_more)
+      },
+
+      error: function(xhr, textStatus, errorThrown) {
+        console.error('Ошибка при выполнении запроса:', errorThrown);
+      }
+    });
+  }
+
+
+  function get_categories_with_total(query, cities, offset, limit, load_more) {
+
+    xhr = $.ajax({
+      type: 'POST',
+      url: '/get_categories/',
+      data: {
+        query: query,
+        cities: cities,
+        limit: limit,
+        products_offset: offset
+      },
+      success: function(responseData) {
+        data.categories = responseData.categories;
+        data.categories_total = responseData.categories_total;
+        categoriesDone = true;
+        updateDataOnPage(query, offset, limit, load_more);
+      },
+
+      error: function(xhr, textStatus, errorThrown) {
+        console.error('Ошибка при выполнении запроса:', errorThrown);
+      }
+    });
+  }
+
+
+
+
+
+  function loadTableWithQuery(offset, limit, load_more) {
+    $('#input_name').text('...обрабатывается...');
+
+    if (!load_more) {
+      $('.products__table thead tr').remove();
+      $('.products__table tbody').empty();
+    }
+
+    $('#products_table tbody').append('<tr><td colspan="7" style="text-align: center">Подождите</td></tr>');
+
+    if (!load_more) {
+      $('#categories_table tbody').append('<tr><td style="text-align: center">Подождите</td></tr>');
+    }
+
+    query = $('#search-input').val();
+    cities = get_cities();
+    var limit = $('#select_limit').val();
+
+    productsDone = false;
+    get_products(query, cities, offset, limit, load_more);
+    countDone = false;
+    get_products_total(query, cities, offset, limit, load_more);
+    categoriesDone = false;
+    get_categories_with_total(query, cities, offset, limit, load_more);
+
+  }
+
+  function load_more() {
+    query = $('#search-input').val();
+    loadTableWithQuery(products_offset, 10, true);
+  }
+
+  function get_cities() {
+    return $('input[type=checkbox]:checked').map(function(_, el) {
+      return $(el).val();
+    }).get();
+  }
+
+  function updateTableForPage(page) {
+    var limit = $('#select_limit').val();
+    var offset = 0;
+    query = $('#search-input').val();
+    if (last_query !== undefined) {
+     if (last_query.trim() != query.trim()) {
+      products_offset = 0;
+      last_query = query;
+      loadTableWithQuery(offset, limit, false);
+      $('#current-page').text('Страница ' + currentPage);
+      }
+    }
+  }
+
+  function search(request, response) {
+        if ($('#search-input').val() != '') {
+        showResults();
+        updateTableForPage();
+        }
+      }
+
+  $(document).ready(function() {
+
+    $("#search-input").autocomplete({
+      source: search,
+      minLength: 2,
+      delay: 1200
+    });
+
+  });
+</script>
+{% endblock %}

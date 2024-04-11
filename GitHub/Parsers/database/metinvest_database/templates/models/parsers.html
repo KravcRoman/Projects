@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="products__table empty-table search-data">
+  <tr>
+    <th>Парсер</th>
+    <th>Статус</th>
+    <th>Поставщиков</th>
+    <th>Категорий</th>
+    <th>Городов</th>
+    <th>Товаров</th>
+    <th>Полей</th>
+  </tr>
+  {% for parser, parser_statistics in parsers.items %}
+   <tr>
+    <td><b>{{ parser }}</b>
+     {% if parser_statistics.pre_count %}
+     <br/>
+     <span style="font-size: 10px; text-align: right" >
+      <a href="/static/csv/{{parser}}_windows.csv">CSV</a>({{ parser_statistics.pre_count }}, {{ parser_statistics.dates }})
+     </span>
+     {% endif %}
+    </td>
+    <td style="color: {{ parser_statistics.status_color }}">{{ parser_statistics.status }}</td>
+    {% if parser_statistics.statistics %}
+      <td>{{ parser_statistics.statistics.suppliers_count }}</td>
+      <td>{{ parser_statistics.statistics.categories_count }}</td>
+      <td>{{ parser_statistics.statistics.cities_count }}</td>
+      <td>{{ parser_statistics.statistics.products_count }}</td>
+      <td>{{ parser_statistics.statistics.fields_count }}</td>
+    {% else %}
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+      <td> - </td>
+    {% endif %}
+   </tr>
+  {% endfor %}
+</table>
+{% endblock %}

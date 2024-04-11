@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/fontawesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/fontawesome.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/fontawesome.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/reset.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/fonts.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/header.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/delivery.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/positions.css">
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/style.css">
+
+    {##}
+    <link href="{{ STATIC_URL }}lk_files/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}lk_files/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}lk_files/bootstrap-icons.css">
+
+    <link href="{{ STATIC_URL }}lk_files/total__pk_pdf.css" rel="stylesheet">
+
+
+</head>
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-inner">
+                <div class="header__logo">
+
+
+                    <div class="total">
+                        <div class="total__header-content">
+                            <div class="total__header">
+                                <img class="total__img" width="100%"
+                                     src="{{ STATIC_URL }}lk_files/total-img.svg"
+                                     alt="">
+
+                                <div class="total__header-content" contenteditable="False">
+                                    <div class="total__company-name">
+                                        {{ companyInfo | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total__content" id="editable-content" contenteditable="False">
+                                <div class="total__title editable_element" id="editable-title"
+                                     contenteditable="True">
+                                    {{ title | safe }}
+                                </div>
+                                <div class="total__line"></div>
+                                <div class="total__participants">
+                                    <div class="total__participant">
+                                        <div class="total__participant-name">Поставщик:</div>
+                                        <div class="total__participant-value">
+                                            {{ supplier | safe }}
+                                        </div>
+                                    </div>
+                                    <div class="total__participant">
+                                        <div class="total__participant-name">Покупатель:</div>
+                                        <div class="total__participant-value editable_element"
+                                             contenteditable="True">
+                                            {{ buyer | safe }}
+                                        </div>
+                                        <div class="total__participant-value"></div>
+                                    </div>
+                                </div>
+                                <table class="test_size" id="selected_products">
+                                    <tbody>
+                                    <tr>
+                                        <th class="total__table-th">№</th>
+                                        <th class="total__table-th">Артикул</th>
+                                        <th class="total__table-th">Товары (работы, услуги)</th>
+                                        <th class="total__table-th">Кол-во</th>
+                                        <th class="total__table-th">Ед.</th>
+                                        <th class="total__table-th">Цена</th>
+                                        <th class="total__table-th">Сумма</th>
+                                        <th class="total__table-th">Примеч.</th>
+                                    </tr>
+
+                                    {% for product in product_data %}
+                                        <tr>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{ product.article }}</td>
+                                            <td>{{ product.productName }}</td>
+                                            <td>{{ product.count }}</td>
+                                            <td>{{ product.unit }}</td>
+                                            <td>{{ product.price }}</td>
+                                            <td>{{ product.amount }}</td>
+                                            <td>{{ product.note }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <img style="cursor: pointer; width: 35px;"
+                                     src="{{ STATIC_URL }}lk_files/green-cross.svg"
+                                     alt="create"
+                                     onclick="createTableRow()">
+
+                                <div class="total__sum">
+                                    <div class="total__sum-item">
+                                        <div class="total__sum-name">Итого:</div>
+                                        <div class="total__sum-value">
+                                            {% for amount in amount_data %}
+                                            {% if forloop.first %}
+                                                {{ amount.totalSum }}
+                                            {% endif %}
+                                        {% endfor %}</div>
+                                    </div>
+                                    <div class="total__sum-item">
+                                        <div class="total__sum-name">В том числе НДС:</div>
+                                        <div class="total__sum-value_ndc">{% for amount in amount_data %}
+                                            {% if forloop.first %}
+                                                {{ amount.ndc }}
+                                            {% endif %}
+                                        {% endfor %}</div>
+                                    </div>
+                                    <div class="total__sum-item">
+                                        <div class="total__sum-name">Всего к оплате:</div>
+                                        <div class="total__sum-value_final">{% for amount in amount_data %}
+                                            {% if forloop.first %}
+                                                {{ amount.totalSumAndNdc }}
+                                            {% endif %}
+                                        {% endfor %}</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="total__suggest-value-blue">
+                                    <div class="total__suggest-blue-list">
+                                        ВАМ ТАКЖЕ МОГУТ ПОНАДОБИТЬСЯ:
+                                    </div>
+                                    <div class="total__suggest-blue-catalog">
+                                        смотреть каталог
+                                    </div>
+
+                                </div>
+
+
+                                <div class="total__suggest-description">
+                                    <div class="list-container">
+                                        <ul class="list">
+                                            <li class="list-item">полный спектр металлопроката</li>
+                                            <li class="list-item">строительные материалы</li>
+                                            <li class="list-item">ЖБИ изделия</li>
+                                            <li class="list-item">закладные и нестандартные металлоконструкции</li>
+                                            <li class="list-item">профнастил и сэндвич-панели</li>
+                                            <li class="list-item">металлоизделия изготовленные по индивидуальным
+                                                чертежам в размер
+                                            </li>
+                                        </ul>
+                                        <img class="qr-code" src="{{ STATIC_URL }}lk_files/qr_code2.png"
+                                             alt="">
+                                    </div>
+
+
+                                </div>
+                                <div class="total__footer-text" contenteditable="True">
+                                    <p class="amount__words editable_element num_to_text2">
+                                        {% for amount in amount_data %}
+                                            {% if forloop.counter == 2 %}
+                                                {{ amount.firstStringWithPriceInWords }}
+                                            {% endif %}
+                                        {% endfor %}</p>
+
+                                    <p class="amount__words catalog_words editable_element">
+                                        {% for amount in amount_data %}
+                                            {% if forloop.counter == 2 %}
+                                                {{ amount.secondStringWithPriceInWords }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                                <div class="total__line"></div>
+                                <img class="signature" src="{{ STATIC_URL }}lk_files/signature3.png"
+                                     alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

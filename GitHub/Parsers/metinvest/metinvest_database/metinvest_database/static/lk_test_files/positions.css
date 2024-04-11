@@ -1,0 +1,252 @@
+.positions {
+	background-color: #F7F7F9;
+}
+.positions__header {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+.container {
+}
+.positions__header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* TABLES */
+.table__first-tr {
+	height: 50px;
+}
+.tables__wrapper {
+	display: flex;
+}
+.products__table  tr:last-child,
+.companies__table  tr:last-child {
+	background-color: rgba(26, 182, 255, 0.1);
+}
+.products__table  tr:last-child td,
+.companies__table  tr:last-child td {
+	vertical-align: middle;
+	padding-left: 8px;
+}
+.products__table tr:nth-child(odd),
+.companies__table tr:nth-child(odd) {
+	background-color: #fff;
+}
+.products__table-th,
+.companies__table-th {
+	padding: 22px 8px 8px 8px;
+	font-family: "FuturaPT-medium";
+	font-size: 16px;
+}
+.companies__table-th {
+	padding: 9px 8px 8px 8px;
+}
+.companies__table-td {
+	text-align: right;
+}
+.products__table tr,
+.companies__table tr {
+	font-family: "FuturaPT-regular";
+	font-size: 16px;
+	height: 50px;
+}
+.companies__table-td,
+.products__table-td {
+	padding: 0px;
+}
+.companies__table
+.products__table {
+	width: auto;
+}
+.product-number {
+	color: #939393;
+	text-align: center;
+}
+.products__table-input {
+	max-width: 55px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	padding: 8px;
+	font-family: "FuturaPT-regular";
+	font-size: 14px;
+}
+.products__table-input:focus {
+	border: 1px solid #979797;
+}
+.products__table tr:nth-child(even)  input {
+	background-color: #F7F7F9;
+} 
+.products__table-input:hover {
+	background-color: #fff;
+}
+/* COMPANIES */
+.companies {
+	flex: 1;
+	overflow-x: auto;
+}
+.companies__table-th {
+	text-align: center;
+}
+.company__rating {
+	display: flex;
+	margin-bottom: 2px;
+}
+.company__rating-icon {
+	width: 12px;
+	height: 12px;
+}
+.rating-icon {
+	width: 12px;
+	height: 12px;
+	fill: #1AB6FF;
+	fill-opacity: 0.1;
+}
+.icon-active {
+	fill: #0A5BFF;
+}
+.icon-active > path {
+	fill-opacity: 1;
+}
+.td-active {
+	background-color: #D0EDCF;
+}
+.td-active span {
+	position: relative;
+}
+.td-selected {
+	position: absolute;
+	left: -25px;
+}
+
+/* ADDING */
+.adding {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px 22px 20px 42px;
+
+	background-color: #fff;
+}
+.adding__name {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 495px;
+}
+.adding__input {
+	max-width: 55px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	padding: 8px;
+	font-family: "FuturaPT-regular";
+	font-size: 14px;
+	border: 1px solid #979797;
+}
+.adding__features {
+	display: flex;
+	align-items: center;
+
+	gap: 30px;
+}
+.adding__features-link a {
+	color: #0A5BFF;
+}
+.adding__btns {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.adding__btns-plus {
+	margin-right: 30px;
+}
+.adding__btns-plus a{
+	display: flex;
+}
+.plus-text{ 
+	color: #0A5BFF;
+	font-size: 16px;
+}
+.plus-icon {
+	margin-right: 8px;
+}
+.adding__btns-delete a{
+	display: flex;
+}
+.delete-icon {
+	margin-right: 8px;
+}
+.delete-text {
+	color: #939393;
+}
+
+/* TOTAL */
+.positions__total {
+	padding: 20px 22px 20px 42px;
+	margin-bottom: 30px;
+
+	display: flex;
+	justify-content: space-between;
+}
+.selecting__good-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.selecting__good-wrapper > img {
+	margin-right: 8px;
+}
+.selecting__good-wrapper > span {
+	color: #0A5BFF;
+}
+.positions__sum-items {
+	display: flex;
+	gap: 40px;
+}
+.positions__sum-item {
+	display: flex;
+	gap: 40px;
+	justify-content: space-between;
+}
+.positions__sum-name {
+	font-size: 18px;
+	display: block;
+}
+.positions__sum-value {
+	font-family: "FuturaPT-medium";
+	font-size: 18px;
+	display: block;
+}
+
+/* BOTTOM BTNS */
+.bottom-btns {
+	display: flex;
+	justify-content: right;
+	padding-right: 22px;
+	gap: 20px;
+	padding-bottom: 40px;
+}
+.draft-btn {
+	display: block;
+	cursor: pointer;
+
+	border: 1px solid #979797;
+	padding: 14px 24px;
+	font-size: 18px;
+
+	transition: all 0.1s linear;
+}
+.count-btn {
+	display: block;
+	cursor: pointer;
+	border: 1px solid #979797;
+	padding: 14px 24px;
+	font-size: 18px;
+	transition: all 0.1s linear;
+	background-color: #0A5BFF;
+	color: #fff;
+}

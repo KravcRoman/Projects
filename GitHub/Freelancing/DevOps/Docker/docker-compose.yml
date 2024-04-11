@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+    networks:
+      - mynetwork
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  mongo_data:

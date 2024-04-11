@@ -1,7 +1,8 @@
-/Parsers/database
-/Parsers/metinvest
-/summary (конспекты)/
-/GitHub/ыфва.py
+/GitHub/Parsers/database
+/GitHub/Parsers/metinvest
+/summary (конспекты)
+
+
 /.idea/
 # Django #
 *.log

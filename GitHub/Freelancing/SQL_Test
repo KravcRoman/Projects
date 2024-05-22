@@ -1,0 +1,68 @@
+-- 1) Количество покупателей из Италии и Франции
+select country_name, count(distinct customer_id) as CustomerCountDistinct
+from Customers c
+inner join Countries co on c.country_code = co.country_code
+where co.country_name in ('France', 'Italy')
+group by country_name;
+
+-- 2) ТОП 10 покупателей по расходам
+select customer_name, sum(item_price * quantity) as Revenue
+from Orders o
+inner join Customers c on o.customer_id = c.customer_id
+inner join Items i on o.item_id = i.item_id
+group by customer_name
+order by Revenue desc
+limit 10;
+
+-- 3) Общая выручка USD по странам, если нет дохода, вернуть NULL
+select co.country_name, sum(item_price * quantity) as RevenuePerCountry
+from Orders o
+inner join Customers c on o.customer_id = c.customer_id
+inner join Items i on o.item_id = i.item_id
+right join Countries co on c.country_code = co.country_code
+group by co.country_name;
+
+-- 4) Самый дорогой товар, купленный одним покупателем
+select customer_id, customer_name, item_name as MostExpensiveItemName
+from (
+    select customer_id, customer_name, item_name, row_number() over (partition by customer_id order by item_price desc) as rn
+    from Orders o
+    inner join Customers c on o.customer_id = c.customer_id
+    inner join Items i on o.item_id = i.item_id
+) t
+where rn = 1;
+
+-- 5) Ежемесячный доход
+select to_char(date_time, 'MM') as Month, sum(item_price * quantity) as TotalRevenue
+from Orders o
+inner join Items i on o.item_id = i.item_id
+group by to_char(date_time, 'MM');
+
+-- 6) Найти дубликаты
+select date_time, customer_id, item_id, count(*)
+from Orders
+group by date_time, customer_id, item_id
+having count(*) > 1;
+
+-- 7) Найти "важных" покупателей
+select customer_id, sum(case when rn > 1 then 1 else 0 end) as TotalOrdersCount
+from (
+    select customer_id, row_number() over (partition by customer_id order by date_time) as rn
+    from Orders
+) t
+group by customer_id;
+
+-- 8) Найти покупателей с "ростом" за последний месяц
+with MonthlyRevenue as (
+    select customer_id, to_char(date_time, 'YYYY-MM') as Month, sum(item_price * quantity) as TotalRevenue
+    from Orders o
+    inner join Items i on o.item_id = i.item_id
+    group by customer_id, to_char(date_time, 'YYYY-MM')
+)
+select m1.customer_id, m1.TotalRevenue
+from MonthlyRevenue m1
+inner join (
+    select customer_id, avg(TotalRevenue) as AvgRevenue
+    from MonthlyRevenue
+    group by customer_id
+) m2 on m1.customer_id = m2.customer_id and m1.TotalRevenue > m2.AvgRevenue;

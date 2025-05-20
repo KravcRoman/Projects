@@ -1,0 +1,1 @@
+from .crud_vacation import vacation # Make crud functions accessible via crud.vacation.function_name

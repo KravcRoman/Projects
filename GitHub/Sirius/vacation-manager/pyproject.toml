@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "vacation-manager"
+version = "0.1.0"
+description = "API service for managing employee vacations" # Добавил описание
+authors = ["Roman Kravchenko <4job00@mail.ru>"] # Правильный формат для Poetry
+readme = "README.md"
+packages = [{include = "app"}] # Указываем, где искать код приложения
+
+[tool.poetry.dependencies]
+python = "^3.12" # Указываем Python 3.12
+# Зависимости перенесены сюда в формате Poetry
+fastapi = {extras = ["all"], version = "^0.111.0"} # Используем версию из прошлого примера или вашу ~0.115
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.30"} # Используем версию из прошлого примера или вашу ~2.0.40
+asyncpg = "^0.29.0" # Используем версию из прошлого примера или вашу ~0.30.0
+pydantic = "^2.7.1" # Используем версию из прошлого примера или вашу ~2.11.2
+pydantic-settings = "^2.2.1" # Используем версию из прошлого примера или вашу ~2.8.1
+alembic = "^1.13.1" # Используем версию из прошлого примера или вашу ~1.15.2
+psycopg2-binary = "^2.9.9" # Используем версию из прошлого примера или вашу ~2.9.10
+
+# Зависимости для разработки остались здесь
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0" # Используем версию из прошлого примера или вашу ~8.3.5
+pytest-asyncio = "^0.23.7" # Используем версию из прошлого примера или вашу ~0.26.0
+httpx = "^0.27.0" # Используем версию из прошлого примера или вашу ~0.28.1
+black = "^24.4.2" # Используем версию из прошлого примера или вашу ~25.1.0
+flake8 = "^7.0.0" # Используем версию из прошлого примера или вашу ~7.2.0
+mypy = "^1.10.0" # Используем версию из прошлого примера или вашу ~1.15.0
+pytest-env = "^1.1.3" # Используем версию из прошлого примера или вашу ~1.1.5
+
+# Эта секция остается неизменной или можно упростить requires
+[build-system]
+requires = ["poetry-core>=1.0.0"] # Стандартный вариант
+# requires = ["poetry-core>=2.0.0,<3.0.0"] # Ваш вариант тоже допустим
+build-backend = "poetry.core.masonry.api"
+
+# Опционально: Секции настроек инструментов (black, mypy и т.д.)
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+

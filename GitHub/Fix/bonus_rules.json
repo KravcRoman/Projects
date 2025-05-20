@@ -1,0 +1,5 @@
+{
+  "base_rate": {"rate": 1, "per_amount": 10, "order": 1},
+  "holiday_bonus": {"multiplier": 2, "applies_on": ["Sat", "Sun"], "order": 2},
+  "vip_boost": {"multiplier": 1.4, "order": 3}
+}

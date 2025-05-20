@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: video_service_app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 # --reload для разработки
+    volumes:
+      - ./app:/app/app # Горячая перезагрузка для кода приложения
+      - ./alembic:/app/alembic
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env # Передаем переменные окружения из файла .env
+    depends_on:
+      db:
+        condition: service_healthy # Ждем, пока БД будет готова
+      redis:
+        condition: service_healthy # Ждем, пока Redis будет готов
+    networks:
+      - video_net
+
+  db:
+    image: postgres:16-alpine # Используем последнюю стабильную версию PostgreSQL
+    container_name: video_service_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/ # Сохранение данных БД между перезапусками
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER} # Берем из .env
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - video_net
+
+  redis:
+    image: redis:7-alpine
+    container_name: video_service_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - video_net
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  video_net:
+    driver: bridge

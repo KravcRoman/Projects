@@ -1,0 +1,1 @@
+RULES_FILE = "bonus_rules.json"

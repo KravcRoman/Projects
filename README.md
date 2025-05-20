@@ -61,7 +61,9 @@ I'm passionate about building efficient backend systems, data pipelines, and aut
 - 📂 [TG_bots](https://github.com/KravcRoman/Projects/tree/main/GitHub/TG_bots) – Telegram-боты.
 - 📂 [Django](https://github.com/KravcRoman/Projects/tree/main/GitHub/Django) – сайты на Django.
 - 📂 [Kuban_result](https://github.com/KravcRoman/Projects/tree/main/GitHub/Kuban_result) – проекты с первой работы.
-- 📂 [Arcanegaming](...) / [Sber](...) / [VK](...) и др. – тестовые задания от компаний.
+- 📂 [Arcanegaming](https://github.com/KravcRoman/Projects/tree/main/GitHub/Arcanegaming)
+/ [Sber](https://github.com/KravcRoman/Projects/tree/main/GitHub/Sber)
+/ [VK](https://github.com/KravcRoman/Projects/tree/main/GitHub/VK) и др. – тестовые задания от компаний.
 
 ---
 

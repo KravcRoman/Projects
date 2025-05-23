@@ -1,0 +1,4 @@
+pytest==8.3.5
+selenium==4.21.0
+selenium-stealth==1.0.6
+webdriver-manager==4.0.1

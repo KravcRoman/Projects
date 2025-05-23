@@ -10,7 +10,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0",
-    # Добавьте больше user-agent по желанию
 ]
 
 def create_stealth_driver(headless: bool = False, proxy: Optional[str] = None) -> webdriver.Chrome:
@@ -67,8 +66,3 @@ def simulate_user_activity(driver: webdriver.Chrome) -> None:
         position = random.randint(0, scroll_height)
         driver.execute_script(f"window.scrollTo(0, {position});")
         time.sleep(random.uniform(0.5, 1.5))
-
-    # Можно добавить перемещения мыши через ActionChains, но не всегда нужно
-
-
-
